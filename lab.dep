@@ -1,20 +1,12 @@
-PCVisitSede1 PCVisitSede2 : RouterSede
-PCRH PCAdmin PCCont : RouterSede Switch1
-
-ServerFich ServerManut : Switch2 RouterSede
-
-dnsEmailPrim dnsHTTPSec : Switch3 RouterSede
-
-PCVisitLisboa1 PCVisitLisboa2 : RouterLisboa
-PCLisboaP PCLisboaR : RouterLisboa Switch4
-
-PCVisitPorto1 PCVisitPorto2 : RouterPorto
-PCPortoP PCPortoR : RouterPorto Switch5
-
-PCVisitCoimbra1 PCVisitCoimbra2 : RouterCoimbra
-PCCoimbraP PCCoimbraR : RouterCoimbra Switch6
-
-MainServer : RouterAcesso RouterSede
-
-
-
+Maquina1-LanServicosAdminSFilipe Maquina2-LanServicosAdminSFilipe: switch-LanServicosAdminSFilipe router-SFilipe
+Maquina1-LanServicosAdminMindelo Maquina2-LanServicosAdminMindelo: switch-LanServicosAdminMindelo router-Mindelo
+Maquina1-LanServicosAdminEspargos Maquina2-LanServicosAdminEspargos: switch-LanServicosAdminEspargos router-Espargos
+Maquina1-LanServicosAdminSede Maquina2-LanServicosAdminSede Maquina3-LanServicosAdminSede: switch-LanServicosAdminSede router-Sede
+DNSPrimarioEmail-LanServidoresPublicos DNSSecundarioHTTP-LanServidoresPublicos: switch-LanServidoresPublicos router-Sede
+MonitorizacaoRede-LanServidoresPrivados ServidorFicheiros-LanServidoresPrivados: switch-LanServidoresPrivados router-Sede
+PC1-WifiSFilipe PC2-WifiSFilipe: router-SFilipe
+PC1-WifiEspargos PC2-WifiEspargos: router-Espargos
+PC1-WifiSede PC2-WifiSede: router-Sede
+PC1-WifiMindelo PC2-WifiMindelo: router-Mindelo
+MonitorizacaoRede-LanServidoresPrivados: router-SFilipe router-Mindelo router-Espargos router-Sede DNSSecundarioHTTP-LanServidoresPublicos DNSPrimarioEmail-LanServidoresPublicos ServidorFicheiros-LanServidoresPrivados
+ServidorExterno: router-externo

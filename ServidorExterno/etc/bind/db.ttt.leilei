@@ -1,0 +1,18 @@
+$TTL	60000
+@	IN	SOA	ns.leilei.ttt. admin.leilei.ttt. (
+	             2016032601   	; Serial
+			  28800		; Refresh
+			  14400		; Retry
+			2419200		; Expire
+			      0 )	; Negative Cache TTL
+;
+
+@           	IN  	NS    	ns.leilei.ttt.
+@             IN    MX 5    mail.leilei.ttt.
+
+leilei.ttt.		IN  	A				10.0.0.6
+www						IN	  CNAME 	ns.leilei.ttt.
+ns          	IN	  A	  		10.0.0.6
+imap          IN    A       10.0.0.6
+pop           IN    A       10.0.0.6
+mail          IN    A       10.0.0.6

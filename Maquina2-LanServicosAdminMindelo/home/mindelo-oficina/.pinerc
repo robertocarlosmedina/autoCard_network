@@ -1,0 +1,16 @@
+personal-name=mindelo-oficina
+user-domain=autocar.ttt
+smtp-server=mail.autocar.ttt
+inbox-path={imap.autocar.ttt/user=mindelo-oficina}inbox
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: mindelo-oficina@autocar.ttt
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: mindelo-oficina@autocar.ttt
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: mindelo-oficina@autocar.ttt
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: mindelo-oficina@autocar.ttt
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: mindelo-oficina@autocar.ttt
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: mindelo-oficina@autocar.ttt

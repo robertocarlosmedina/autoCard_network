@@ -1,0 +1,16 @@
+personal-name=espargos-oficina
+user-domain=autocar.ttt
+smtp-server=mail.autocar.ttt
+inbox-path={imap.autocar.ttt/user=espargos-oficina}inbox
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: espargos-oficina@autocar.ttt
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: espargos-oficina@autocar.ttt
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: espargos-oficina@autocar.ttt
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: espargos-oficina@autocar.ttt
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: espargos-oficina@autocar.ttt
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: espargos-oficina@autocar.ttt

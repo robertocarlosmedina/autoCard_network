@@ -1,0 +1,24 @@
+$TTL	60000
+@	IN	SOA	ns1.autocar.ttt. admin.autocar.ttt. (
+	             2016032601   	; Serial
+			  28800		; Refresh
+			  14400		; Retry
+			2419200		; Expire
+			      0 )	; Negative Cache TTL
+;
+@	IN	NS	ns1.autocar.ttt.
+ns1						IN	A				10.0.0.146
+
+@	IN	NS	ns2.autocar.ttt.
+ns2						IN	A				10.0.0.147
+
+@	IN	MX 5	mail.autocar.ttt.
+mail					IN 	A 			10.0.0.146
+
+autocar.ttt.	IN	A				10.0.0.146
+imap					IN	A				10.0.0.146
+pop						IN	A				10.0.0.146
+www						IN	CNAME 	ns2.autocar.ttt.
+intranet			IN	CNAME 	ns2.autocar.ttt.
+ftp						IN	A				192.168.0.35
+mrtg					IN	A				192.168.0.34

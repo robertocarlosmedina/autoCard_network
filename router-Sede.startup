@@ -1,0 +1,113 @@
+ip addr add dev eth0 10.0.0.1/30
+ip link set dev eth0 up
+ip addr add dev eth1 10.0.0.145/29
+ip link set dev eth1 up
+ip addr add dev eth2 192.168.0.33/29
+ip link set dev eth2 up
+ip addr add dev eth3 192.168.0.1/29
+ip link set dev eth3 up
+ip addr add dev eth4 10.0.0.161/28
+ip link set dev eth4 up
+ip addr add dev eth5 10.0.0.133/30
+ip link set dev eth5 up
+ip addr add dev eth6 10.0.0.130/30
+ip link set dev eth6 up
+
+ip route add 10.0.0.0/28 via 10.0.0.2
+ip route add 192.168.3.0/24 via 10.0.0.147
+ip route add 0.0.0.0/0 via 192.168.2.1
+
+
+##### firewall
+# eth7 - interface internet;  eth0 - interface exterior
+iptables -A FORWARD -i eth0 -d 192.168.0.0/16 -j DROP
+iptables -A FORWARD -i eth7 -d 192.168.0.0/16 -j DROP
+
+iptables -A FORWARD -i eth0 -s 10.0.0.128/25 -j DROP
+iptables -A FORWARD -i eth7 -s 10.0.0.128/25 -j DROP
+
+
+# block internet access to VPN clients
+# eth7 - interface internet;  eth0 - interface exterior
+iptables -A FORWARD -s 192.168.3.0/24 -o eth0 -j DROP
+iptables -A FORWARD -s 192.168.3.0/24 -o eth7 -j DROP
+
+
+# allow telnet access for vpn clients
+iptables -A FORWARD -s 192.168.3.0/24 -d 192.168.0.0/16 -p tcp --dport 23 -j ACCEPT
+iptables -A FORWARD -s 192.168.3.0/24 -d 10.0.0.128/25 -p tcp --dport 23 -j ACCEPT
+
+
+# servidor primario
+iptables -A FORWARD -d 10.0.0.146 -j ACCEPT -p udp --dport 53 #DNS
+iptables -A FORWARD -d 10.0.0.146 -j ACCEPT -p udp --sport 53 #ServidorExterno -> DNSPrimario (DNS)
+iptables -A FORWARD -d 10.0.0.146 -j ACCEPT -p udp --dport 25  #SMTP
+iptables -A FORWARD -d 10.0.0.146 -j ACCEPT -p tcp --dport 25  #SMTP
+iptables -A FORWARD -d 10.0.0.146 -j ACCEPT -p tcp --dport 143 #IMAP
+iptables -A FORWARD -d 10.0.0.146 -j ACCEPT -p udp --dport 161 #SNMP
+iptables -A FORWARD -d 10.0.0.146 -j ACCEPT -p udp --dport 162 #SNMP
+iptables -A FORWARD -d 10.0.0.146 -j ACCEPT -p tcp --dport 162 #SNMP
+iptables -A FORWARD -d 10.0.0.146 -j ACCEPT -p tcp --dport 8080 #SSH tunnel
+iptables -A FORWARD -d 10.0.0.146 -j ACCEPT -p tcp --dport 8081 #SSH tunnel
+iptables -A FORWARD -s 192.168.0.34 -d 10.0.0.146 -j ACCEPT -p tcp --sport 22 #SSH tunnel
+iptables -A FORWARD -s 192.168.0.35 -d 10.0.0.146 -j ACCEPT -p tcp --sport 22 #SSH tunnel
+iptables -A FORWARD -s 10.0.0.10 -d 10.0.0.146 -j ACCEPT -p tcp --dport 22 #SSH
+iptables -A FORWARD -d 10.0.0.146 -j DROP
+
+# servidor secundario
+iptables -A FORWARD -d 10.0.0.147 -j ACCEPT -p udp --dport 53 #DNS
+iptables -A FORWARD -d 10.0.0.147 -j ACCEPT -p udp --sport 53 #ServidorExterno -> DNSPrimario (DNS)
+iptables -A FORWARD -d 10.0.0.147 -j ACCEPT -p tcp --dport 80 #http
+iptables -A FORWARD -d 10.0.0.147 -j ACCEPT -p tcp --dport 443 #https
+iptables -A FORWARD -d 10.0.0.147 -j ACCEPT -p udp --dport 161 #SNMP
+iptables -A FORWARD -d 10.0.0.147 -j ACCEPT -p udp --dport 162 #SNMP
+iptables -A FORWARD -d 10.0.0.147 -j ACCEPT -p tcp --dport 162 #SNMP
+iptables -A FORWARD -s 10.0.0.10 -d 10.0.0.147 -j ACCEPT -p tcp --dport 8080 #SSH tunnel
+iptables -A FORWARD -s 10.0.0.10 -d 10.0.0.147 -j ACCEPT -p tcp --dport 8081 #SSH tunnel
+iptables -A FORWARD -s 192.168.0.34 -d 10.0.0.147 -j ACCEPT -p tcp --sport 22 #SSH tunnel
+iptables -A FORWARD -s 192.168.0.35 -d 10.0.0.147 -j ACCEPT -p tcp --sport 22 #SSH tunnel
+iptables -A FORWARD -s 10.0.0.10 -d 10.0.0.147 -j ACCEPT -p tcp --dport 22 #SSH
+iptables -A FORWARD -d 10.0.0.147 -j ACCEPT -p udp --dport 1194 #VPN
+iptables -A FORWARD -d 10.0.0.147 -j DROP
+
+
+# servidor monitorizacao
+iptables -A FORWARD -s 10.0.0.128/25 -d 192.168.0.34 -j ACCEPT -p tcp --dport 80 #http
+iptables -A FORWARD -s 10.0.0.128/25 -d 192.168.0.34 -j ACCEPT -p tcp --dport 22 #SSH
+iptables -A FORWARD -d 192.168.0.34 -j DROP
+
+# servidor ficheiros
+iptables -A FORWARD -s 10.0.0.128/25 -d 192.168.0.35 -j ACCEPT -p tcp --dport 20 #FTP
+iptables -A FORWARD -s 192.168.0.0/16 -d 192.168.0.35 -j ACCEPT -p tcp --dport 20 #FTP
+iptables -A FORWARD -s 10.0.0.128/25 -d 192.168.0.35 -j ACCEPT -p tcp --dport 21 #FTP
+iptables -A FORWARD -s 192.168.0.0/16 -d 192.168.0.35 -j ACCEPT -p tcp --dport 21 #FTP
+iptables -A FORWARD -s 10.0.0.128/25 -d 192.168.0.35 -j ACCEPT -p tcp --dport 22 #SSH
+iptables -A FORWARD -d 192.168.0.35 -j DROP
+
+
+# ligacoes tcp - apenas permitir establecimento de sessoes tcp do exterior para a rede wifi
+iptables -A FORWARD -d 10.0.0.160/28 -p tcp --syn -j ACCEPT
+iptables -A FORWARD -d 10.0.0.176/28 -p tcp --syn -j ACCEPT
+iptables -A FORWARD -d 10.0.0.192/28 -p tcp --syn -j ACCEPT
+iptables -A FORWARD -d 10.0.0.208/28 -p tcp --syn -j ACCEPT
+iptables -A FORWARD -i eht0 -d 10.0.0.128/25 -p tcp --syn -j DROP
+iptables -A FORWARD -i eht7 -d 10.0.0.128/25 -p tcp --syn -j DROP
+iptables -A FORWARD -i eht0 -d 192.168.0.0/16 -p tcp --syn -j DROP
+iptables -A FORWARD -i eht7 -d 192.168.0.0/16 -p tcp --syn -j DROP
+
+
+#block localhost destination from outside network
+iptables -A FORWARD -d 127.0.0.1 -j DROP
+iptables -A FORWARD -s 127.0.0.1 -j DROP
+
+
+#NAT for private ip's
+iptables -t nat -A POSTROUTING -s 192.168.0.0/16 -o eth0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -s 192.168.0.0/16 -o eth7 -j MASQUERADE
+
+##########
+
+
+/etc/init.d/dhcp3-server start
+/etc/init.d/zebra start
+/etc/init.d/snmpd start

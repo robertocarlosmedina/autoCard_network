@@ -1,0 +1,13 @@
+ip addr add dev eth0 10.0.0.10/30
+ip link set dev eth0 up
+ip route add default via 10.0.0.9
+
+#ssh-keygen -t rsa
+chmod 700 /root
+chmod 700 /root/.ssh
+chmod 600 /root/.ssh/id_rsa
+chmod 700 /root/.ssh/id_rsa.pub
+
+dpkg -i /openresolv_3.5.2-1_all.deb
+
+#openvpn /root/client.conf & >> logvpn.txt

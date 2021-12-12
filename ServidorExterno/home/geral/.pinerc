@@ -1,0 +1,6 @@
+personal-name=geral
+user-domain=leilei.ttt
+smtp-server=mail.leilei.ttt
+inbox-path={imap.leilei.ttt/user=geral}inbox
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: geral@leilei.ttt

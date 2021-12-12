@@ -1,0 +1,29 @@
+ip addr add dev eth0 10.0.0.147/29
+ip link set dev eth0 up
+ip route add default via 10.0.0.145
+
+dpkg -i /usr/sbin/sudo.deb
+
+/etc/init.d/bind start
+/etc/init.d/snmpd start
+
+a2enmod ssl
+
+
+a2ensite www.autocar.ttt
+a2ensite intranet.autocar.ttt
+/etc/init.d/apache2 start
+/etc/init.d/ssh start
+
+
+useradd autocarssh
+echo "autocarssh	ALL=(ALL) ALL" >> /etc/sudoers
+echo -e "autocarssh\nautocarssh" | passwd autocarssh
+chown autocarssh /home/autocarssh
+chown autocarssh /home/autocarssh/.ssh
+chown autocarssh /home/autocarssh/.ssh/authorized_keys
+chmod 700 /home/autocarssh
+chmod 700 /home/autocarssh/.ssh
+chmod 700 /home/autocarssh/.ssh/authorized_keys
+
+(openvpn /etc/openvpn/server.conf &) >> logvpn.txt

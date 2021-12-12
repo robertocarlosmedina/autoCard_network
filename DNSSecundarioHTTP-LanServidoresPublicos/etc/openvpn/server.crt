@@ -1,0 +1,74 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=PT, ST=LS, L=Espargos, O=Autocar, OU=Sede, CN=Autocar CA/emailAddress=admin@autocar.ttt
+        Validity
+            Not Before: May 16 16:17:02 2016 GMT
+            Not After : May 14 16:17:02 2026 GMT
+        Subject: C=PT, ST=LS, L=Espargos, O=Autocar, CN=server/emailAddress=admin@autocar.ttt
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (1024 bit)
+                Modulus (1024 bit):
+                    00:b4:3f:40:4b:6f:30:09:61:65:32:f2:67:b0:23:
+                    e6:53:ad:b6:6b:2c:16:08:58:7d:7f:84:60:e1:68:
+                    13:74:fe:db:54:32:35:a8:7f:57:db:29:28:df:c8:
+                    18:e7:71:2e:bc:1a:d8:51:72:f1:c3:e6:a1:98:1c:
+                    cd:ac:69:d7:de:0d:4d:b6:74:f8:4f:48:83:95:d6:
+                    5e:ce:90:5e:75:26:84:9b:64:5a:2c:94:31:a4:ec:
+                    de:51:58:c3:aa:8c:6c:b8:17:58:bc:00:c2:c5:37:
+                    2c:55:fd:d6:d4:8f:f6:33:e3:4f:a7:39:8b:63:ed:
+                    72:f3:5d:5e:cf:05:a7:c5:ab
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Cert Type: 
+                SSL Server
+            Netscape Comment: 
+                Easy-RSA Generated Server Certificate
+            X509v3 Subject Key Identifier: 
+                F8:D4:7F:A3:8A:B6:34:A8:39:8E:C0:08:1A:B5:5F:55:22:40:05:6E
+            X509v3 Authority Key Identifier: 
+                keyid:5D:6B:0E:4B:A4:90:25:D1:81:72:34:7E:DB:AA:8B:39:EC:40:F7:DB
+                DirName:/C=PT/ST=LS/L=Espargos/O=Autocar/OU=Sede/CN=Autocar CA/emailAddress=admin@autocar.ttt
+                serial:C9:F3:24:89:99:BD:54:35
+
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 Key Usage: 
+                Digital Signature, Key Encipherment
+    Signature Algorithm: sha1WithRSAEncryption
+        7d:2c:38:bb:b3:9b:7a:48:4f:d0:ac:56:6b:61:a0:df:58:aa:
+        e1:dd:8d:d1:1b:ff:c3:1b:8f:b2:5f:cd:2f:a5:9a:ba:2c:c3:
+        27:fb:6e:e7:e4:ee:3b:b0:f7:94:78:97:15:79:56:cf:39:4f:
+        41:12:e5:bc:ce:c4:02:8a:b9:f8:de:ec:6a:f6:e3:36:a4:77:
+        96:ee:4a:35:89:a0:e2:be:b4:48:c0:75:61:25:e9:2f:e0:82:
+        0a:9e:30:7b:11:fa:f5:60:7c:a7:f8:f5:9f:8a:bc:3b:9a:65:
+        53:58:2f:6b:8d:4a:66:b5:9f:95:a3:eb:eb:a4:16:f1:ad:4b:
+        35:d7
+-----BEGIN CERTIFICATE-----
+MIIDwDCCAymgAwIBAgIBATANBgkqhkiG9w0BAQUFADCBgzELMAkGA1UEBhMCUFQx
+CzAJBgNVBAgTAkxTMQ8wDQYDVQQHEwZMaXNib2ExEDAOBgNVBAoTB0F1dG9jYXIx
+DTALBgNVBAsTBFNlZGUxEzARBgNVBAMTCkF1dG9jYXIgQ0ExIDAeBgkqhkiG9w0B
+CQEWEWFkbWluQGF1dG9jYXIudHR0MB4XDTE2MDUxNjE2MTcwMloXDTI2MDUxNDE2
+MTcwMlowcDELMAkGA1UEBhMCUFQxCzAJBgNVBAgTAkxTMQ8wDQYDVQQHEwZMaXNi
+b2ExEDAOBgNVBAoTB0F1dG9jYXIxDzANBgNVBAMTBnNlcnZlcjEgMB4GCSqGSIb3
+DQEJARYRYWRtaW5AYXV0b2Nhci50dHQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJ
+AoGBALQ/QEtvMAlhZTLyZ7Aj5lOttmssFghYfX+EYOFoE3T+21QyNah/V9spKN/I
+GOdxLrwa2FFy8cPmoZgczaxp194NTbZ0+E9Ig5XWXs6QXnUmhJtkWiyUMaTs3lFY
+w6qMbLgXWLwAwsU3LFX91tSP9jPjT6c5i2PtcvNdXs8Fp8WrAgMBAAGjggFUMIIB
+UDAJBgNVHRMEAjAAMBEGCWCGSAGG+EIBAQQEAwIGQDA0BglghkgBhvhCAQ0EJxYl
+RWFzeS1SU0EgR2VuZXJhdGVkIFNlcnZlciBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU
++NR/o4q2NKg5jsAIGrVfVSJABW4wgbgGA1UdIwSBsDCBrYAUXWsOS6SQJdGBcjR+
+26qLOexA99uhgYmkgYYwgYMxCzAJBgNVBAYTAlBUMQswCQYDVQQIEwJMUzEPMA0G
+A1UEBxMGTGlzYm9hMRAwDgYDVQQKEwdBdXRvY2FyMQ0wCwYDVQQLEwRTZWRlMRMw
+EQYDVQQDEwpBdXRvY2FyIENBMSAwHgYJKoZIhvcNAQkBFhFhZG1pbkBhdXRvY2Fy
+LnR0dIIJAMnzJImZvVQ1MBMGA1UdJQQMMAoGCCsGAQUFBwMBMAsGA1UdDwQEAwIF
+oDANBgkqhkiG9w0BAQUFAAOBgQB9LDi7s5t6SE/QrFZrYaDfWKrh3Y3RG//DG4+y
+X80vpZq6LMMn+27n5O47sPeUeJcVeVbPOU9BEuW8zsQCirn43uxq9uM2pHeW7ko1
+iaDivrRIwHVhJekv4IIKnjB7Efr1YHyn+PWfirw7mmVTWC9rjUpmtZ+Vo+vrpBbx
+rUs11w==
+-----END CERTIFICATE-----

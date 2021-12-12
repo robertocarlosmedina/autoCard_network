@@ -1,0 +1,21 @@
+<VirtualHost *:80>
+    ServerAdmin admin@autocar.ttt
+    ServerName autocar.ttt
+    ServerAlias www.autocar.ttt
+    DocumentRoot "/var/www/www.autocar.ttt"
+    Redirect permanent / https://www.autocar.ttt
+</VirtualHost>
+
+<VirtualHost *:443>
+    ServerAdmin admin@autocar.ttt
+    ServerName autocar.ttt
+    ServerAlias www.autocar.ttt
+    DocumentRoot "/var/www/www.autocar.ttt"
+    SSLEngine On
+    SSLCertificateFile    /etc/apache2/ssl/apache.crt
+		SSLCertificateKeyFile /etc/apache2/ssl/apache.key
+    <Directory />
+        Order allow,deny
+        Allow from 192.168.0.0/29
+    </Directory>
+</VirtualHost>

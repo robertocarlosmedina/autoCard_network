@@ -1,0 +1,6 @@
+<VirtualHost *:80>
+    ServerAdmin admin@autocar.ttt
+    ServerName autocar.ttt
+    ServerAlias intranet.autocar.ttt
+    DocumentRoot "/var/www/intranet.autocar.ttt"
+</VirtualHost>

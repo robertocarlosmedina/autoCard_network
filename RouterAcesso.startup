@@ -1,8 +1,0 @@
-ip addr add dev eth0 10.0.0.2/30
-ip link set eth0 up
-
-ip addr add dev eth1 10.0.0.5/30
-ip link set eth1 up
-
-ip route add 10.0.0.128/25 via 10.0.0.1
-ip route add 192.168.0.0/16 via 10.0.0.1

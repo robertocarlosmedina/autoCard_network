@@ -1,0 +1,16 @@
+personal-name=mindelo-pecas
+user-domain=autocar.ttt
+smtp-server=mail.autocar.ttt
+inbox-path={imap.autocar.ttt/user=mindelo-pecas}inbox
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: mindelo-pecas@autocar.ttt
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: mindelo-pecas@autocar.ttt
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: mindelo-pecas@autocar.ttt
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: mindelo-pecas@autocar.ttt
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: mindelo-pecas@autocar.ttt
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: mindelo-pecas@autocar.ttt

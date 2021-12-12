@@ -1,0 +1,6 @@
+personal-name=administracao
+user-domain=autocar.ttt
+smtp-server=mail.autocar.ttt
+inbox-path={imap.autocar.ttt/user=administracao}inbox
+feature-list=reply-always-uses-reply-to
+customized-hdrs=Reply-To: administracao@autocar.ttt

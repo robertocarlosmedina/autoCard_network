@@ -1,0 +1,36 @@
+ip addr add dev eth0 10.0.0.146/29
+ip link set dev eth0 up
+ip route add default via 10.0.0.145
+
+
+dpkg -i /usr/sbin/sudo.deb
+
+# Change permissions of the mail spool directory, so that the guest user is
+# allowed to write lock files.
+chmod a+w /var/spool/mail
+
+# Change permissions of the exim4 configuration file, to avoid errors due to
+# loose permissions
+chmod go-rw /etc/exim4/exim4.conf
+
+users=("administracao" "contabilidade" "rh" "espargos-oficina" "espargos-pecas" "porto-oficina" "porto-pecas" "mindelo-oficina" "mindelo-pecas")
+for username in "${users[@]}"
+do
+  useradd -m $username && echo -e "$username\n$username" | passwd $username
+done
+
+/etc/init.d/bind start
+/etc/init.d/exim4 start
+/etc/init.d/inetd start
+/etc/init.d/snmpd start
+/etc/init.d/ssh start
+
+useradd autocarssh
+echo "autocarssh	ALL=(ALL) ALL" >> /etc/sudoers
+echo -e "autocarssh\nautocarssh" | passwd autocarssh
+chown autocarssh /home/autocarssh
+chown autocarssh /home/autocarssh/.ssh
+chown autocarssh /home/autocarssh/.ssh/authorized_keys
+chmod 700 /home/autocarssh
+chmod 700 /home/autocarssh/.ssh
+chmod 700 /home/autocarssh/.ssh/authorized_keys
