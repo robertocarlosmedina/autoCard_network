@@ -13,7 +13,7 @@ chmod a+w /var/spool/mail
 # loose permissions
 chmod go-rw /etc/exim4/exim4.conf
 
-users=("administracao" "contabilidade" "rh" "espargos-oficina" "espargos-pecas" "porto-oficina" "porto-pecas" "mindelo-oficina" "mindelo-pecas")
+users=("administracao" "contabilidade" "rh" "espargos-oficina" "espargos-pecas" "sfilipe-oficina" "sfilipe-pecas" "mindelo-oficina" "mindelo-pecas")
 for username in "${users[@]}"
 do
   useradd -m $username && echo -e "$username\n$username" | passwd $username
