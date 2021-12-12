@@ -1,0 +1,29 @@
+! -*- rip -*-
+!
+! RIPd sample configuration file
+!
+! $Id: ripd.conf.sample,v 1.1.1.1 2002/12/13 20:15:30 paul Exp $
+!
+hostname ripd
+password zebra
+enable password zebra
+!
+!debug rip events
+!debug rip packet
+!debug rip zebra
+!
+router rip
+redistribute connected
+network 10.0.0.128/30
+network 10.0.0.140/30
+! network 11.0.0.0/8
+! network eth0
+! route 10.0.0.0/8
+! distribute-list private-only in eth0
+!
+!access-list private-only permit 10.0.0.0/8
+!access-list private-only deny any
+! 
+log file /var/log/zebra/ripd.log
+!
+!log stdout

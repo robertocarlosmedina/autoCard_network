@@ -1,0 +1,24 @@
+$TTL 	60000
+@		IN	SOA	autocar.ttt.	root.autocar.ttt. (
+			2006031201 ; serial
+			28 ; refresh
+			14 ; retry
+			3600000 ; expire
+			0 ; negative cache ttl
+			)
+@		IN	NS	dnsEmailPrim
+@		IN	MX	5	mail
+
+dnsEmailPrim	IN	A	10.0.0.146
+dnsHTTPSec 	IN	A	10.0.0.147
+PCAdmin		IN	A	10.0.0.154
+PCRH		IN	A	10.0.0.155
+PCCont		IN	A	10.0.0.156
+
+mail		IN	A	10.0.0.146
+www		IN 	CNAME	dnsHTTPSec
+intranet	IN	CNAME	dnsHTTPSec
+
+email 		IN	CNAME	dnsEmailPrim
+imap		IN	CNAME	dnsEmailPrim
+pop 		IN	CNAME	dnsEmailPrim

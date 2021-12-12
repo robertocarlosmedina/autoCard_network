@@ -1,0 +1,18 @@
+$TTL	60000
+@		IN	SOA	MainServer.ttt.	root.MainServer.ttt. (
+			2006031201 ; serial
+			28800 ; refresh
+			14400 ; retry 
+			3600000 ; expire
+			0 ; negative cache ttl
+			)
+@		IN	NS	MainServer.ttt.
+MainServer.ttt.	IN	A	10.0.0.6
+
+autocar		IN	NS	dnsEmailPrim.autocar.ttt.
+dnsEmailPrim.autocar.ttt.	IN	A	10.0.0.146
+
+autocar		IN	NS	dnsHTTPSec.autocar.ttt.
+dnsHTTPSec.autocar.ttt.		IN	A	10.0.0.147
+
+leilei		IN	NS	MainServer.ttt.
