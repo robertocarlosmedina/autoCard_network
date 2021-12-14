@@ -1,12 +1,10 @@
-Maquina1-LanServicosAdminSFilipe Maquina2-LanServicosAdminSFilipe: switch-LanServicosAdminSFilipe router-SFilipe
-Maquina1-LanServicosAdminMindelo Maquina2-LanServicosAdminMindelo: switch-LanServicosAdminMindelo router-Mindelo
-Maquina1-LanServicosAdminEspargos Maquina2-LanServicosAdminEspargos: switch-LanServicosAdminEspargos router-Espargos
-Maquina1-LanServicosAdminSede Maquina2-LanServicosAdminSede Maquina3-LanServicosAdminSede: switch-LanServicosAdminSede router-Sede
+PC1-LanServicosAdminSFilipe PC2-LanServicosAdminSFilipe: switch-LanServicosAdminSFilipe router-SFilipe
+PC1-LanServicosAdminMindelo PC2-LanServicosAdminMindelo: switch-LanServicosAdminMindelo router-Mindelo
+PC1-LanServicosAdminEspargos PC2-LanServicosAdminEspargos: switch-LanServicosAdminEspargos router-Espargos
+PC1-LanServicosAdminSede PC2-LanServicosAdminSede PC3-LanServicosAdminSede: switch-LanServicosAdminSede router-Sede
 DNSPrimarioEmail-LanServidoresPublicos DNSSecundarioHTTP-LanServidoresPublicos: switch-LanServidoresPublicos router-Sede
-MonitorizacaoRede-LanServidoresPrivados ServidorFicheiros-LanServidoresPrivados: switch-LanServidoresPrivados router-Sede
 PC1-WifiVisitSFilipe PC2-WifiVisitSFilipe: router-SFilipe
 PC1-WifiVisitEspargos PC2-WifiVisitEspargos: router-Espargos
 PC1-WifiVisitSede PC2-WifiVisitSede: router-Sede
 PC1-WifiVisitMindelo PC2-WifiVisitMindelo: router-Mindelo
-MonitorizacaoRede-LanServidoresPrivados: router-SFilipe router-Mindelo router-Espargos router-Sede DNSSecundarioHTTP-LanServidoresPublicos DNSPrimarioEmail-LanServidoresPublicos ServidorFicheiros-LanServidoresPrivados
 ServidorExterno: router-externo
