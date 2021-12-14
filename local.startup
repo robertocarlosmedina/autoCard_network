@@ -1,10 +1,10 @@
 sudo ip route add 10.0.0.0/24 via 192.168.2.2
 
-#Pedro's PC:
+#PC1:
 sudo iptables -t nat -A POSTROUTING -o iwlwifi -j MASQUERADE
 
-#Luis's PC:
+#PC2:
 sudo iptables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE
 
-#Joao's PC:
+#PC3:
 sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
